@@ -1,4 +1,4 @@
-package org.practise.dsa_training.day1;
+package org.practise.dsa_training.day1_2pointer;
 
 import java.util.Arrays;
 
