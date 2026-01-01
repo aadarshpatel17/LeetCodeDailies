@@ -1,4 +1,4 @@
-package org.practise.dcq_leetcode;
+package org.practise.random;
 
 public class CountNegativeNumbersSortedMatrix_1351 {
     public int countNegatives(int[][] grid) {
