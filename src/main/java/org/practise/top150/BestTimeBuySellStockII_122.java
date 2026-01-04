@@ -1,9 +1,8 @@
-package org.practise.top150.arraystring;
+package org.practise.top150;
 
 import java.util.Scanner;
 
-public class BestTimeBuySellStock_121 {
-
+public class BestTimeBuySellStockII_122 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         // input: array
@@ -16,16 +15,16 @@ public class BestTimeBuySellStock_121 {
     }
 
     public static int maxProfit(int[] prices) {
-        int minPrice = Integer.MAX_VALUE;
+        int minPrice = prices[0];
         int maxProfit = 0;
-        for (int i = 0; i < prices.length; i++) {
-            if(prices[i] < minPrice) {
+        for (int i = 1; i < prices.length; i++) {
+            if (prices[i] < minPrice) {
                 minPrice = prices[i];
             } else {
-                maxProfit = Math.max(maxProfit, prices[i]-minPrice);
+                maxProfit += prices[i] - minPrice;
+                minPrice = prices[i];
             }
         }
         return maxProfit;
     }
-
 }

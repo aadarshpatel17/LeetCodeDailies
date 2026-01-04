@@ -1,9 +1,10 @@
-package org.practise.top150.arraystring;
+package org.practise.top150;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class RemoveDuplicatesSortedArray2_80 {
+public class RemoveDuplicatesSortedArray_26 {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -20,13 +21,12 @@ public class RemoveDuplicatesSortedArray2_80 {
 
     public static int removeDuplicates(int[] nums) {
         int n = nums.length;
-        int j=2;
-        for(int i=2; i<n; i++) {
-            if(nums[i] != nums[j-2]) {
-                nums[j++] = nums[i];
+        int j=0;
+        for(int i=1; i<n; i++) {
+            if(nums[i] != nums[j]) {
+                nums[++j] = nums[i];
             }
         }
-        System.out.println(Arrays.toString(nums));
-        return j;
+        return j+1;
     }
 }

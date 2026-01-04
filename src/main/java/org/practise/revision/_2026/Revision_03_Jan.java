@@ -1,9 +1,9 @@
-package org.practise;
+package org.practise.revision._2026;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class day_3_revision {
+public class Revision_03_Jan {
 
     public void reverseString(char[] s) {
         int left = 0, right = s.length -1;

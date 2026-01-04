@@ -1,4 +1,4 @@
-package org.practise.top150.arraystring;
+package org.practise.top150;
 
 public class JumpGame_55 {
     public boolean canJump(int[] nums) {
