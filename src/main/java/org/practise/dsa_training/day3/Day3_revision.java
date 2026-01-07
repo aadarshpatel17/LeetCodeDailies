@@ -1,11 +1,11 @@
-package org.practise.dsa_training;
+package org.practise.dsa_training.day3;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
-public class Day_3_revision {
+public class Day3_revision {
 
     public void reverseString(char[] s) {
         int left = 0, right = s.length -1;

@@ -1,8 +1,8 @@
-package org.practise.dsa_training;
+package org.practise.dsa_training.day4;
 
 import java.util.Arrays;
 
-public class Day_4_Practise {
+public class Day4_Practise {
 //    283. Move Zeroes
     public void moveZeroes(int[] nums) {
         int left = 0, right = nums.length - 1;
