@@ -1,5 +1,7 @@
 package org.practise.leetcode_dailies;
 
+import java.util.Arrays;
+
 public class LC_2943 {
     // 2943. Maximize Area of Square Hole in Grid
     public int maximizeSquareHoleArea(int n, int m, int[] hBars, int[] vBars) {
