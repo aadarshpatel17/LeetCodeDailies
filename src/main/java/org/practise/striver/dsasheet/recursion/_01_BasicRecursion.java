@@ -1,23 +1,27 @@
 package org.practise.striver.dsasheet.recursion;
 
-public class BasicRecursion {
+public class _01_BasicRecursion {
+
+//    Print Name N times using Recursion
+//    Print 1 to N using Recursion
+//    Print N to 1 using Recursion
 
     public static void main(String[] args) {
-        BasicRecursion basicRecursion = new BasicRecursion();
+        _01_BasicRecursion a01BasicRecursion = new _01_BasicRecursion();
 
         int n = 10;
 
         // 1 to n
-        basicRecursion.printNNumbers_ForwardRecursion(1, n);
+        a01BasicRecursion.printNNumbers_ForwardRecursion(1, n);
         System.out.println();
-        basicRecursion.printNNumbers_BackTracking(n, n);
+        a01BasicRecursion.printNNumbers_BackTracking(n, n);
 
         System.out.println();
 
         // n to 1
-        basicRecursion.printNToOne_ForwardRecursion(n, n);
+        a01BasicRecursion.printNToOne_ForwardRecursion(n, n);
         System.out.println();
-        basicRecursion.printNToOne_BackTracking(1, n);
+        a01BasicRecursion.printNToOne_BackTracking(1, n);
 
     }
 
