@@ -22,7 +22,7 @@ public class Basisc {
         int highestCount = Integer.MIN_VALUE;
         int lowestCount = Integer.MAX_VALUE;
         int highest = Integer.MIN_VALUE;
-        int lowest = Integer.MAX_VALUE;0
+        int lowest = Integer.MAX_VALUE;
         for(Map.Entry<Integer, Integer> map : freq.entrySet()) {
             int num = map.getKey();
             int count = map.getValue();
