@@ -9,25 +9,47 @@ public class LC_3507 {
 
     //    3507. Minimum Pair Removal to Sort Array I
     public int minimumPairRemoval(int[] nums) {
-        int n = nums.length;
-
-        // LNDS using DP (since constraints are small)
-        int[] dp = new int[n];
-        Arrays.fill(dp, 1);
-
-        int lnds = 1;
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < i; j++) {
-                if (nums[j] <= nums[i]) {
-                    dp[i] = Math.max(dp[i], dp[j] + 1);
-                }
-            }
-            lnds = Math.max(lnds, dp[i]);
+        List<Integer> list = new ArrayList<>();
+        for (int num : nums) {
+            list.add(num);
         }
 
-        int removeCount = n - lnds;
-        return (removeCount + 1) / 2; // ceil(removeCount / 2)
+        int operations = 0;
+
+        while(!isSorted(list)) {
+            int index = minPairSum(list);
+            int merged = list.get(index) + list.get(index + 1);
+            list.set(index, merged);
+            list.remove(index + 1);
+            operations += 1;
+        }
+
+
+        return operations;
+    }
+
+    private boolean isSorted(List<Integer> nums) {
+        int n = nums.size();
+        for(int i=0; i<n-1; i++) {
+            if(nums.get(i) > nums.get(i+1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private int minPairSum(List<Integer> nums) {
+        int n = nums.size();
+        int minSum = Integer.MAX_VALUE;
+        int index = -1;
+        for(int i=0; i<n-1; i++) {
+            int sum = nums.get(i) + nums.get(i+1);
+            if(sum < minSum) {
+                minSum = sum;
+                index = i;
+            }
+        }
+        return index;
     }
 
 }
