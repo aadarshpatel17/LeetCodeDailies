@@ -11,8 +11,9 @@ public class Sorting {
     public static void main(String[] args) {
         int[] nums = {4, 3, 1, 5, 2};
         int n = 5;
-//        selectionSort(nums, n);
-        bubbleSort(nums, n);
+//        selectionSort(nums);
+//        bubbleSort(nums);
+        insertionSort(nums);
         System.out.println(Arrays.toString(nums));
     }
 
@@ -74,7 +75,7 @@ public class Sorting {
                     didSwap = true;
                 }
             }
-            if(!didSwap) {
+            if (!didSwap) {
                 break;
             }
         }
@@ -89,21 +90,23 @@ public class Sorting {
             Avg Case: O(n^2)
             Best Case: O(n)
     */
-    public static int[] insertionSort(int[] nums) {
-        int n = nums.length;
-        for(int i=1; i<n; i++) {
+    public static void insertionSort(int[] nums) {
+        int n = nums.length; // Size of the array
+
+        // For every element in the array
+        for (int i = 1; i < n; i++) {
             int key = nums[i]; // Current element as key
-            int j = i-1;
+            int j = i - 1;
 
             // Shift elements that are greater than key by one position
-            while(j > 0 && nums[j] > key) {
-                nums[j+1] = nums[j];
+            while (j >= 0 && nums[j] > key) {
+                nums[j + 1] = nums[j];
                 j--;
             }
 
-            nums[j+1] = key; // Insert key at correct position
+            nums[j + 1] = key; // Insert key at correct position
         }
-        return nums;
+
     }
 
 }
