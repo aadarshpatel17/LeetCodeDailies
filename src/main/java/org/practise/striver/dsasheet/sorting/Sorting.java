@@ -10,10 +10,7 @@ public class Sorting {
 
     public static void main(String[] args) {
         int[] nums = {4, 3, 1, 5, 2};
-        int n = 5;
-//        selectionSort(nums);
-//        bubbleSort(nums);
-        insertionSort(nums);
+        bubbleSort(nums);
         System.out.println(Arrays.toString(nums));
     }
 
@@ -24,21 +21,21 @@ public class Sorting {
             Worst Case: O(n^2)
             Best Case: O(n^2)
     * */
-    public static void selectionSort(int[] nums, int n) {
+    public static void selectionSort(int[] nums) {
+        int n = nums.length;
         for (int i = 0; i < n - 1; i++) {
-            int minIndex = i; // Assume current index holds the minimum
-
-            // Find the minimum element in the remaining array
+            int minIndex = i;
             for (int j = i + 1; j < n; j++) {
-                // get the min element index
                 if (nums[j] < nums[minIndex]) {
-                    minIndex = j; // Update minIndex if smaller is found
+                    minIndex = j;
                 }
             }
-            // Swap the found minimum element with the first element of unsorted part
-            int temp = nums[minIndex];
-            nums[minIndex] = nums[i];
-            nums[i] = temp;
+            // swap
+            if (minIndex != i) {
+                int temp = nums[minIndex];
+                nums[minIndex] = nums[i];
+                nums[i] = temp;
+            }
         }
     }
 
@@ -52,7 +49,7 @@ public class Sorting {
     */
     public static void bubbleSort(int[] nums) {
         int n = nums.length;
-        for (int i = n - 1; i >= 0; i--) {   //Use two nested loops to iterate over the array
+        for (int i = n - 1; i >= 0; i--) {   // Use two nested loops to iterate over the array
             for (int j = 0; j <= i - 1; j++) {
                 if (nums[j] > nums[j + 1]) {
                     int temp = nums[j + 1];
