@@ -2,7 +2,7 @@ package org.practise.striver.dsasheet.sorting;
 
 import java.util.Arrays;
 
-public class Sorting {
+public class Sorting1 {
 
     // Selection Sort
     // Bubble Sort
