@@ -14,7 +14,7 @@ public class Sorting2 {
 
     public static void main(String[] args) {
         int[] nums = {4, 3, 1, 5, 2};
-        mergeSort(nums, 0, nums.length-1);
+        quickSort(nums, 0, nums.length-1);
         System.out.println(Arrays.toString(nums));
     }
 
@@ -29,7 +29,6 @@ public class Sorting2 {
         mergeSort(nums, mid + 1, high);
         merge(nums, low, mid, high);
     }
-
     public static void merge(int[] nums, int low, int mid, int high) {
         List<Integer> temp = new ArrayList<>();
         int left = low;
@@ -55,5 +54,43 @@ public class Sorting2 {
             nums[i] = temp.get(i-low);
         }
     }
+
+
+    /* QUICK SORT:
+        TC: nlogn
+    */
+    public static void quickSort(int[] nums, int low, int high) {
+        // base case
+        if(low >= high) {
+            return;
+        }
+        int partition = pivot(nums, low, high);
+        quickSort(nums, low, partition-1);
+        quickSort(nums, partition+1, high);
+    }
+
+    public static int pivot(int[] nums, int low, int high) {
+        int pivot = low;
+        int i=low;
+        int j = high;
+        while(i < j) {
+            while(nums[i] <= nums[pivot] && i <= high) {
+                i++;
+            }
+            while(nums[j] > nums[pivot] && j >= low) {
+                j--;
+            }
+            if(i < j) {
+                int temp = nums[i];
+                nums[i] = nums[j];
+                nums[j] = temp;
+            }
+        }
+        int temp = nums[pivot];
+        nums[pivot] = nums[j];
+        nums[j] = temp;
+        return j;
+    }
+
 
 }
