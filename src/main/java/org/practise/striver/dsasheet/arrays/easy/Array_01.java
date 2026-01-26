@@ -1,6 +1,5 @@
-package org.practise.striver.dsasheet.arrays;
+package org.practise.striver.dsasheet.arrays.easy;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

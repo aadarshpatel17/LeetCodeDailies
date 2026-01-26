@@ -1,4 +1,4 @@
-package org.practise.striver.dsasheet.arrays;
+package org.practise.striver.dsasheet.arrays.easy;
 
 public class LC_1752 {
 
