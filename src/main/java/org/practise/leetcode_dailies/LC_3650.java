@@ -5,7 +5,6 @@ import java.util.*;
 public class LC_3650 {
 
 //    3650. Minimum Cost Path with Edge Reversals
-
     static class Pair {
         int node;
         int dist;
