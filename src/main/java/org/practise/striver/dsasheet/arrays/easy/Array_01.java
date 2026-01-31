@@ -14,8 +14,8 @@ public class Array_01 {
         System.out.println(array01.largestElement_withoutSorting(nums));
 
         // Find Second Smallest and Second Largest Element in an array
-        System.out.println(array01.secondLargestElement(nums));
-        System.out.println(array01.secondSmallestElement(nums));
+        System.out.println("second highest: " + array01.secondLargestElement(nums));
+        System.out.println("second smallest: " + array01.secondSmallestElement(nums));
 
         // Check if an Array is Sorted
         ArrayList<Integer> list = new ArrayList<>();
@@ -59,9 +59,9 @@ public class Array_01 {
 
     // Find Second Smallest and Second Largest Element in an array
     public int secondLargestElement(int[] nums) {
-        int largest = nums[0];
-        int secondLargest = -1;
-        for (int i = 1; i < nums.length; i++) {
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+        for (int i = 0; i < nums.length; i++) {
             if (nums[i] > largest) {
                 secondLargest = largest;
                 largest = nums[i];
