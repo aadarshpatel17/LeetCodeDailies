@@ -1,5 +1,7 @@
 package org.practise.leetcode_dailies;
 
+import java.util.Arrays;
+
 public class LC_3640 {
 
 //    3640. Trionic Array II
