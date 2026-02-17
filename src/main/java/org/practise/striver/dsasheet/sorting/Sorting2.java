@@ -64,20 +64,20 @@ public class Sorting2 {
         if(low >= high) {
             return;
         }
-        int partition = pivot(nums, low, high);
-        quickSort(nums, low, partition-1);
-        quickSort(nums, partition+1, high);
+        int pivot = partition(nums, low, high);
+        quickSort(nums, low, pivot-1);
+        quickSort(nums, pivot+1, high);
     }
 
-    public static int pivot(int[] nums, int low, int high) {
-        int pivot = low;
+    public static int partition(int[] nums, int low, int high) {
+        int pivot = nums[low];
         int i=low;
         int j = high;
         while(i < j) {
-            while(nums[i] <= nums[pivot] && i <= high) {
+            while(i <= high && nums[i] <= pivot) {
                 i++;
             }
-            while(nums[j] > nums[pivot] && j >= low) {
+            while(j >= low && nums[j] > pivot ) {
                 j--;
             }
             if(i < j) {
@@ -86,9 +86,8 @@ public class Sorting2 {
                 nums[j] = temp;
             }
         }
-        int temp = nums[pivot];
-        nums[pivot] = nums[j];
-        nums[j] = temp;
+        nums[low] = nums[j];
+        nums[j] = pivot;
         return j;
     }
 
