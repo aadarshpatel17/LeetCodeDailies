@@ -1,6 +1,4 @@
-package org.practise.striver.dsasheet.recursion;
-
-import java.util.Arrays;
+package org.practise.striver.dsasheet.recursion_basics;
 
 public class _05_Fibonacci {
 

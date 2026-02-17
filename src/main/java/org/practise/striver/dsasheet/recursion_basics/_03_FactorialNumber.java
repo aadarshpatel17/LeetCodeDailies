@@ -1,4 +1,4 @@
-package org.practise.striver.dsasheet.recursion;
+package org.practise.striver.dsasheet.recursion_basics;
 
 public class _03_FactorialNumber {
 

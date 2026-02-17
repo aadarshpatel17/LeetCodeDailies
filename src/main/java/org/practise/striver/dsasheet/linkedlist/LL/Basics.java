@@ -1,4 +1,4 @@
-package org.practise.striver.dsasheet.linkedlist;
+package org.practise.striver.dsasheet.linkedlist.LL;
 
 class Node {
 
@@ -25,22 +25,20 @@ public class Basics {
         traverse(head);
         System.out.println();
         System.out.println("Length of LL: " + lengthOfLL(head));
-        System.out.println("Check If Present: " + isPresent(head, 14));
+        System.out.println("Check If Present: " + isPresent(head, 4));
         System.out.println("*******Insert At HEAD*******");
         head = insertAtHead(head, 100);
         traverse(head);
     }
 
     public static Node insertAtHead(Node head, int value) {
-        Node temp = new Node(value);
-        temp.next = head;
-        return temp;
+        return new Node(value, head);
     }
 
     public static boolean isPresent(Node head, int value) {
         Node temp = head;
-        while(temp != null) {
-            if(temp.data == value) {
+        while (temp != null) {
+            if (temp.data == value) {
                 return true;
             }
             temp = temp.next;
@@ -51,7 +49,7 @@ public class Basics {
     public static Node arrayToLL(int[] nums) {
         Node head = new Node(nums[0]);
         Node mover = head;
-        for(int i=1; i<nums.length; i++) {
+        for (int i = 1; i < nums.length; i++) {
             Node temp = new Node(nums[i]);
             mover.next = temp;
             mover = temp;
@@ -60,18 +58,18 @@ public class Basics {
     }
 
     public static int lengthOfLL(Node head) {
-        int count = 0;
         Node temp = head;
+        int count = 0;
         while(temp != null) {
-            temp = temp.next;
             count++;
+            temp = temp.next;
         }
         return count;
     }
 
     public static void traverse(Node head) {
         Node temp = head;
-        while (temp != null) {
+        while(temp != null) {
             System.out.print(temp.data + " ");
             temp = temp.next;
         }
