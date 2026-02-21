@@ -11,19 +11,39 @@ import java.util.stream.Stream;
 public class Main {
     public static void main(String[] args) {
 
-        countLetterInString("train");
+        sequence(7);
+        sequenceII(7);
 
+    }
+
+    public static void sequence(int n) {
+        System.out.print("Sequence: ");
+        for (int i = 1; i <= n; i++) {
+            long term = 3 + (3L * i * (i - 1)) / 2;
+            System.out.print(term + " ");
+        }
+        System.out.println();
+    }
+
+    public static void sequenceII(int n) {
+        int term = 3;
+        System.out.print(term + " ");
+
+        for (int i = 1; i < n; i++) {
+            term += 3 * i;  // add 3, 6, 9, 12, ...
+            System.out.print(term + " ");
+        }
     }
 
     public static void countLetterInString(String str) {
         int[] ch = new int[26];
-        for(int i=0; i<str.length(); i++) {
+        for (int i = 0; i < str.length(); i++) {
             ch[str.charAt(i) - 'a']++;
         }
 
-        for(int i=0; i<26; i++) {
-            if(ch[i] != 0) {
-                char c = (char)(i + 'a');
+        for (int i = 0; i < 26; i++) {
+            if (ch[i] != 0) {
+                char c = (char) (i + 'a');
                 System.out.println(c + " " + ch[i]);
             }
         }
@@ -35,13 +55,13 @@ public class Main {
 //        return map;
     }
 
-    public static String reverseString(String str ){
+    public static String reverseString(String str) {
         return Stream.of(str)
                 .map(word -> new StringBuilder(word).reverse())
                 .collect(Collectors.joining());
     }
 
-    public static String reverseStringII(String str ) {
+    public static String reverseStringII(String str) {
         return IntStream.range(0, str.length())
                 .map(i -> str.charAt(str.length() - i - 1))
                 .collect(StringBuilder::new,
