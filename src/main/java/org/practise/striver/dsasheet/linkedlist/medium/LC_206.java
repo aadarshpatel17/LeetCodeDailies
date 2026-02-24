@@ -1,5 +1,7 @@
 package org.practise.striver.dsasheet.linkedlist.medium;
 
+import org.practise.striver.dsasheet.linkedlist.Node;
+
 import java.util.Stack;
 
 public class LC_206 {
@@ -7,29 +9,29 @@ public class LC_206 {
     public static void main(String[] args) {
         int[] nums = new int[]{1, 2, 3, 4, 5};
 //        Node head = new Node(nums[4]);
-        ListNode head = arrayToLL(nums);
+        Node head = arrayToLL(nums);
         head = reverseList_using_recursion(head);
         traverse(head);
     }
 
-    public static ListNode reverseList_using_recursion(ListNode head) {
+    public static Node reverseList_using_recursion(Node head) {
         if(head == null || head.next == null) {
             return head;
         }
-        ListNode newHead = reverseList_using_recursion(head.next);
-        ListNode front = head.next;
+        Node newHead = reverseList_using_recursion(head.next);
+        Node front = head.next;
         front.next = head;
         head.next =  null;
         return newHead;
     }
 
-    public static ListNode reverseListII(ListNode head) {
+    public static Node reverseListII(Node head) {
         if (head == null) {
             return null;
         }
-        ListNode temp = head;
-        ListNode stored = null;
-        ListNode prev = null;
+        Node temp = head;
+        Node stored = null;
+        Node prev = null;
         while (temp != null) {
             stored = temp.next;
             temp.next = prev;
@@ -40,20 +42,20 @@ public class LC_206 {
     }
 
     // 206. Reverse Linked List
-    public static ListNode reverseList(ListNode head) {
+    public static Node reverseList(Node head) {
         if (head == null) return null;
-        Stack<ListNode> stack = new Stack<>();
-        ListNode temp = head;
+        Stack<Node> stack = new Stack<>();
+        Node temp = head;
         while (temp != null) {
             stack.push(temp);
             temp = temp.next;
         }
 
         // create new LinkedList
-        ListNode newList = new ListNode(stack.pop().val);
+        Node newList = new Node(stack.pop().data);
         temp = newList;
         while (!stack.isEmpty()) {
-            ListNode nn = new ListNode(stack.pop().val);
+            Node nn = new Node(stack.pop().data);
             temp.next = nn;
             temp = nn;
         }
@@ -61,21 +63,21 @@ public class LC_206 {
         return newList;
     }
 
-    public static ListNode arrayToLL(int[] nums) {
-        ListNode head = new ListNode(nums[0]);
-        ListNode mover = head;
+    public static Node arrayToLL(int[] nums) {
+        Node head = new Node(nums[0]);
+        Node mover = head;
         for (int i = 1; i < nums.length; i++) {
-            ListNode temp = new ListNode(nums[i]);
+            Node temp = new Node(nums[i]);
             mover.next = temp;
             mover = temp;
         }
         return head;
     }
 
-    public static void traverse(ListNode head) {
-        ListNode temp = head;
+    public static void traverse(Node head) {
+        Node temp = head;
         while (temp != null) {
-            System.out.print(temp.val + " ");
+            System.out.print(temp.data + " ");
             temp = temp.next;
         }
         System.out.println();

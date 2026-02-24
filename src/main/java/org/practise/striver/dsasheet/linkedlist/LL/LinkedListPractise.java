@@ -1,5 +1,7 @@
 package org.practise.striver.dsasheet.linkedlist.LL;
 
+import org.practise.striver.dsasheet.linkedlist.Node;
+
 public class LinkedListPractise {
 
     public static void main(String[] args) {

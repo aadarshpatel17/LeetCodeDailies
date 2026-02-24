@@ -1,19 +1,5 @@
 package org.practise.striver.dsasheet.linkedlist;
 
-class Node {
-    int data;
-    Node next;
-
-    Node(int data) {
-        this.data = data;
-    }
-
-    Node(int data, Node next) {
-        this.data = data;
-        this.next = next;
-    }
-}
-
 public class PractiseI {
 
     public static void main(String[] args) {

@@ -1,32 +1,23 @@
 package org.practise.striver.dsasheet.linkedlist.DLL;
 
-class Node {
-    int data;
-    Node next;
-    Node prev;
 
-    Node(int data) {
-        this.data = data;
-        this.next = null;
-        this.prev = null;
-    }
-}
+import org.practise.striver.dsasheet.linkedlist.NodeII;
 
 public class Basics {
 
     public static void main(String[] args) {
         int[] nums = {1,2,3,4};
-        Node head = arrayToDll(nums);
+        NodeII head = arrayToDll(nums);
 
         head = insertAtKII(head, 99, 5);
         print(head);
     }
 
     // this is also correct 
-    public static Node insertAtKII(Node head, int value, int k) {
+    public static NodeII insertAtKII(NodeII head, int value, int k) {
         if(head == null) {
             if(k == 1)
-                return new Node(value);
+                return new NodeII(value);
             else
                 return null;
         }
@@ -34,10 +25,10 @@ public class Basics {
             return insertAtHead(head, value);
         }
         int count = 1;
-        Node temp = head;
+        NodeII temp = head;
         while(temp != null) {
             if(count == k-1) {
-                Node nn = new Node(value);
+                NodeII nn = new NodeII(value);
                 nn.next = temp.next;
                 if(temp.next != null)
                     temp.next.prev = nn;
@@ -52,10 +43,10 @@ public class Basics {
     }
 
     // this is also correct
-    public static Node insertAtKI(Node head, int value, int k) {
+    public static NodeII insertAtKI(NodeII head, int value, int k) {
         if(head == null) {
             if(k == 1)
-                return new Node(value);
+                return new NodeII(value);
             else
                 return null;
         }
@@ -63,10 +54,10 @@ public class Basics {
             return insertAtHead(head, value);
         }
         int count = 1;
-        Node temp = head;
+        NodeII temp = head;
         while(temp.next != null) {
             if(count == k-1) {
-                Node nn = new Node(value);
+                NodeII nn = new NodeII(value);
                 nn.next = temp.next;
                 temp.next.prev = nn;
                 nn.prev = temp;
@@ -84,26 +75,26 @@ public class Basics {
     }
 
     // insert at end
-    public static Node insertAtEnd(Node head, int value) {
+    public static NodeII insertAtEnd(NodeII head, int value) {
         if (head == null) {
-            return new Node(value);
+            return new NodeII(value);
         }
-        Node temp = head;
+        NodeII temp = head;
         while (temp.next != null) {
             temp = temp.next;
         }
-        Node nn = new Node(value);
+        NodeII nn = new NodeII(value);
         temp.next = nn;
         nn.prev = temp;
         return head;
     }
 
     // insert at head
-    public static Node insertAtHead(Node head, int value) {
+    public static NodeII insertAtHead(NodeII head, int value) {
         if (head == null) {
-            return new Node(value);
+            return new NodeII(value);
         }
-        Node nn = new Node(value);
+        NodeII nn = new NodeII(value);
         nn.next = head;
         nn.prev = null;
         head.prev = nn;
@@ -111,11 +102,11 @@ public class Basics {
     }
 
     // array to DLL
-    public static Node arrayToDll(int[] nums) {
-        Node head = new Node(nums[0]);
-        Node temp = head;
+    public static NodeII arrayToDll(int[] nums) {
+        NodeII head = new NodeII(nums[0]);
+        NodeII temp = head;
         for (int i = 1; i < nums.length; i++) {
-            Node nn = new Node(nums[i]);
+            NodeII nn = new NodeII(nums[i]);
             temp.next = nn;
             nn.prev = temp;
             temp = nn;
@@ -124,8 +115,8 @@ public class Basics {
     }
 
     // check if value is present
-    public static boolean isPresent(Node head, int value) {
-        Node temp = head;
+    public static boolean isPresent(NodeII head, int value) {
+        NodeII temp = head;
         while (temp != null) {
             if (temp.data == value) {
                 return true;
@@ -136,8 +127,8 @@ public class Basics {
     }
 
     // traverse
-    public static void print(Node head) {
-        Node temp = head;
+    public static void print(NodeII head) {
+        NodeII temp = head;
         while (temp != null) {
             System.out.print(temp.data + " ");
             temp = temp.next;
