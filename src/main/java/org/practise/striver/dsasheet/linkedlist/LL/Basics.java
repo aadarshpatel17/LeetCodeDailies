@@ -1,13 +1,13 @@
 package org.practise.striver.dsasheet.linkedlist.LL;
 
-import org.practise.striver.dsasheet.linkedlist.Node;
+import org.practise.striver.dsasheet.linkedlist.ListNode;
 
 public class Basics {
 
     public static void main(String[] args) {
         int[] nums = new int[]{1, 3, 2, 5, 6, 4};
 //        Node head = new Node(nums[4]);
-        Node head = arrayToLL(nums);
+        ListNode head = arrayToLL(nums);
         traverse(head);
         System.out.println();
         System.out.println("Length of LL: " + lengthOfLL(head));
@@ -17,12 +17,12 @@ public class Basics {
         traverse(head);
     }
 
-    public static Node insertAtHead(Node head, int value) {
-        return new Node(value, head);
+    public static ListNode insertAtHead(ListNode head, int value) {
+        return new ListNode(value, head);
     }
 
-    public static boolean isPresent(Node head, int value) {
-        Node temp = head;
+    public static boolean isPresent(ListNode head, int value) {
+        ListNode temp = head;
         while (temp != null) {
             if (temp.data == value) {
                 return true;
@@ -32,19 +32,19 @@ public class Basics {
         return false;
     }
 
-    public static Node arrayToLL(int[] nums) {
-        Node head = new Node(nums[0]);
-        Node mover = head;
+    public static ListNode arrayToLL(int[] nums) {
+        ListNode head = new ListNode(nums[0]);
+        ListNode mover = head;
         for (int i = 1; i < nums.length; i++) {
-            Node temp = new Node(nums[i]);
+            ListNode temp = new ListNode(nums[i]);
             mover.next = temp;
             mover = temp;
         }
         return head;
     }
 
-    public static int lengthOfLL(Node head) {
-        Node temp = head;
+    public static int lengthOfLL(ListNode head) {
+        ListNode temp = head;
         int count = 0;
         while(temp != null) {
             count++;
@@ -53,8 +53,8 @@ public class Basics {
         return count;
     }
 
-    public static void traverse(Node head) {
-        Node temp = head;
+    public static void traverse(ListNode head) {
+        ListNode temp = head;
         while(temp != null) {
             System.out.print(temp.data + " ");
             temp = temp.next;

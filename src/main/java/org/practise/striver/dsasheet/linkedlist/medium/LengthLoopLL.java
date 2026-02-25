@@ -1,15 +1,15 @@
 package org.practise.striver.dsasheet.linkedlist.medium;
 
-import org.practise.striver.dsasheet.linkedlist.Node;
+import org.practise.striver.dsasheet.linkedlist.ListNode;
 
 public class LengthLoopLL {
 
-    public int findLengthOfLoop_optimized(Node head) {
+    public int findLengthOfLoop_optimized(ListNode head) {
         if (head == null)
             return 0;
 
-        Node slow = head;
-        Node fast = head;
+        ListNode slow = head;
+        ListNode fast = head;
 
         while (fast != null && fast.next != null) {
             slow = slow.next;
@@ -22,12 +22,12 @@ public class LengthLoopLL {
         return 0;
     }
 
-    public int findLengthOfLoop(Node head) {
+    public int findLengthOfLoop(ListNode head) {
         if (head == null)
             return 0;
 
-        Node slow = head;
-        Node fast = head;
+        ListNode slow = head;
+        ListNode fast = head;
 
         while (fast != null && fast.next != null) {
             slow = slow.next;
@@ -46,9 +46,9 @@ public class LengthLoopLL {
         return 0;
     }
 
-    public int countLoopLength(Node meetingPoint) {
+    public int countLoopLength(ListNode meetingPoint) {
         int length = 1;
-        Node temp = meetingPoint;
+        ListNode temp = meetingPoint;
         while (temp.next != meetingPoint) {
             temp = temp.next;
             length += 1;

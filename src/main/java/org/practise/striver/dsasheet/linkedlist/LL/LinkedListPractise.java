@@ -1,27 +1,27 @@
 package org.practise.striver.dsasheet.linkedlist.LL;
 
-import org.practise.striver.dsasheet.linkedlist.Node;
+import org.practise.striver.dsasheet.linkedlist.ListNode;
 
 public class LinkedListPractise {
 
     public static void main(String[] args) {
         int[] nums = new int[]{1, 3, 2, 5, 4};
-        Node head = arrayToLL(nums);
+        ListNode head = arrayToLL(nums);
         head = insertBeforeValue(head, 100, 3);
         traverse(head);
     }
 
     // delete head;
-    public static Node deleteAtStart(Node head) {
+    public static ListNode deleteAtStart(ListNode head) {
         return (head == null) ? null : head.next;
     }
 
     // delete tail
-    public static Node deleteAtEnd(Node head) {
+    public static ListNode deleteAtEnd(ListNode head) {
         if (head == null || head.next == null) {
             return null;
         }
-        Node temp = head;
+        ListNode temp = head;
         while (temp.next.next != null) {
             temp = temp.next;
         }
@@ -30,15 +30,15 @@ public class LinkedListPractise {
     }
 
     // delete tail at index K
-    public static Node deleteAtK(Node head, int k) {
+    public static ListNode deleteAtK(ListNode head, int k) {
         if (head == null) {
             return head;
         }
         if (k == 1) {
             return head.next;
         }
-        Node temp = head;
-        Node prev = null;
+        ListNode temp = head;
+        ListNode prev = null;
         int count = 0;
         while (temp != null) {
             count++;
@@ -53,15 +53,15 @@ public class LinkedListPractise {
     }
 
     // delete with value
-    public static Node deleteValue(Node head, int value) {
+    public static ListNode deleteValue(ListNode head, int value) {
         if (head == null) {
             return head;
         }
         if (head.data == value) {
             return head.next;
         }
-        Node temp = head;
-        Node prev = null;
+        ListNode temp = head;
+        ListNode prev = null;
         while (temp != null) {
             if (temp.data == value) {
                 prev.next = prev.next.next;
@@ -74,41 +74,41 @@ public class LinkedListPractise {
     }
 
     // insertion at the head of Linked List
-    public static Node insertAtStart(Node head, int value) {
-        return new Node(value, head);
+    public static ListNode insertAtStart(ListNode head, int value) {
+        return new ListNode(value, head);
     }
 
     // insert at end
-    public static Node insertAtEnd(Node head, int value) {
+    public static ListNode insertAtEnd(ListNode head, int value) {
         if (head == null) {
-            return new Node(value);
+            return new ListNode(value);
         }
-        Node temp = head;
+        ListNode temp = head;
         while (temp.next != null) {
             temp = temp.next;
         }
-        temp.next = new Node(value);
+        temp.next = new ListNode(value);
         return head;
     }
 
     // insert at kth place
-    public static Node insertAtK(Node head, int k, int value) {
+    public static ListNode insertAtK(ListNode head, int k, int value) {
         if (head == null) {
             if (k == 1) {
-                return new Node(value);
+                return new ListNode(value);
             } else {
                 return null;
             }
         }
         if (k == 1) {
-            return new Node(value, head);
+            return new ListNode(value, head);
         }
         int count = 0;
-        Node temp = head;
+        ListNode temp = head;
         while (temp != null) {
             count++;
             if (count == k - 1) {
-                Node newNode = new Node(value);
+                ListNode newNode = new ListNode(value);
                 newNode.next = temp.next;
                 temp.next = newNode;
                 break;
@@ -118,17 +118,17 @@ public class LinkedListPractise {
         return head;
     }
 
-    public static Node insertBeforeValue(Node head, int k, int value) {
+    public static ListNode insertBeforeValue(ListNode head, int k, int value) {
         if (head == null) {
             return null;
         }
         if (head.data == value) {
-            return new Node(k, head);
+            return new ListNode(k, head);
         }
-        Node temp = head;
+        ListNode temp = head;
         while (temp.next != null) {
             if (temp.next.data == value) {
-                Node newNode = new Node(k);
+                ListNode newNode = new ListNode(k);
                 newNode.next = temp.next;
                 temp.next = newNode;
                 break;
@@ -140,9 +140,9 @@ public class LinkedListPractise {
 
 
     // Find the length of the Linked List
-    public static int lengthOfLL(Node head) {
+    public static int lengthOfLL(ListNode head) {
         int count = 0;
-        Node temp = head;
+        ListNode temp = head;
         while (temp != null) {
             count += 1;
             temp = temp.next;
@@ -151,8 +151,8 @@ public class LinkedListPractise {
     }
 
     // Search in Linked List
-    public static int search(Node head, int value) {
-        Node temp = head;
+    public static int search(ListNode head, int value) {
+        ListNode temp = head;
         int count = 0;
         while (temp != null) {
             count++;
@@ -164,19 +164,19 @@ public class LinkedListPractise {
         return -1;
     }
 
-    public static Node arrayToLL(int[] nums) {
-        Node head = new Node(nums[0]);
-        Node mover = head;
+    public static ListNode arrayToLL(int[] nums) {
+        ListNode head = new ListNode(nums[0]);
+        ListNode mover = head;
         for (int i = 1; i < nums.length; i++) {
-            Node temp = new Node(nums[i]);
+            ListNode temp = new ListNode(nums[i]);
             mover.next = temp;
             mover = temp;
         }
         return head;
     }
 
-    public static void traverse(Node head) {
-        Node temp = head;
+    public static void traverse(ListNode head) {
+        ListNode temp = head;
         while (temp != null) {
             System.out.print(temp.data + " ");
             temp = temp.next;
