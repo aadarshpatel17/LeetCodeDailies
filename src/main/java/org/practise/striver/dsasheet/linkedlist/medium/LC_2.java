@@ -12,7 +12,7 @@ public class LC_2 {
         int[] nums2 = new int[]{9, 9, 9, 9};
         ListNode l1 = arrayToLL(nums1);
         ListNode l2 = arrayToLL(nums2);
-        ListNode head = addTwoNumbers(l1, l2);
+        ListNode head = addTwoNumbers_optimize(l1, l2);
         print(head);
     }
 
