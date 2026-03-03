@@ -57,13 +57,13 @@ public class LinkedListPractise {
         if (head == null) {
             return head;
         }
-        if (head.data == value) {
+        if (head.val == value) {
             return head.next;
         }
         ListNode temp = head;
         ListNode prev = null;
         while (temp != null) {
-            if (temp.data == value) {
+            if (temp.val == value) {
                 prev.next = prev.next.next;
                 break;
             }
@@ -122,12 +122,12 @@ public class LinkedListPractise {
         if (head == null) {
             return null;
         }
-        if (head.data == value) {
+        if (head.val == value) {
             return new ListNode(k, head);
         }
         ListNode temp = head;
         while (temp.next != null) {
-            if (temp.next.data == value) {
+            if (temp.next.val == value) {
                 ListNode newNode = new ListNode(k);
                 newNode.next = temp.next;
                 temp.next = newNode;
@@ -156,7 +156,7 @@ public class LinkedListPractise {
         int count = 0;
         while (temp != null) {
             count++;
-            if (temp.data == value) {
+            if (temp.val == value) {
                 return count;
             }
             temp = temp.next;
@@ -178,7 +178,7 @@ public class LinkedListPractise {
     public static void traverse(ListNode head) {
         ListNode temp = head;
         while (temp != null) {
-            System.out.print(temp.data + " ");
+            System.out.print(temp.val + " ");
             temp = temp.next;
         }
     }

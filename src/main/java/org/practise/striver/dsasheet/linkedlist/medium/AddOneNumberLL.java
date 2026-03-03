@@ -19,8 +19,8 @@ public class AddOneNumberLL {
         ListNode temp = head;
         int carry = 1;
         while (temp != null && carry > 0) {
-            int sum = temp.data + carry;
-            temp.data = sum % 10;
+            int sum = temp.val + carry;
+            temp.val = sum % 10;
             carry = sum / 10;
 
             // if there's no next node and we still have a carry
@@ -39,12 +39,12 @@ public class AddOneNumberLL {
         ListNode temp = head;
         int carry = 1;
         while (temp != null) {
-            temp.data += carry;
-            if (temp.data < 10) {
+            temp.val += carry;
+            if (temp.val < 10) {
                 carry = 0;
                 break;
             } else {
-                temp.data = 0;
+                temp.val = 0;
                 carry = 1;
             }
             temp = temp.next;
@@ -65,11 +65,11 @@ public class AddOneNumberLL {
         ListNode prev = null;
         int carry = 0;
         while (temp != null) {
-            if (temp.data < 9) {
-                temp.data = temp.data + carry + 1;
+            if (temp.val < 9) {
+                temp.val = temp.val + carry + 1;
                 break;
             } else {
-                temp.data = 0;
+                temp.val = 0;
                 carry = 1;
             }
             prev = temp;

@@ -31,10 +31,10 @@ public class SortLinkedList012 {
 
         ListNode temp = head;
         while(temp != null) {
-            if(temp.data == 0) {
+            if(temp.val == 0) {
                 d1.next = temp;
                 d1 = temp;
-            } else if(temp.data == 1) {
+            } else if(temp.val == 1) {
                 d2.next = temp;
                 d2 = temp;
             } else {

@@ -67,10 +67,10 @@ public class LC_206 {
         }
 
         // create new LinkedList
-        ListNode newList = new ListNode(stack.pop().data);
+        ListNode newList = new ListNode(stack.pop().val);
         temp = newList;
         while (!stack.isEmpty()) {
-            ListNode nn = new ListNode(stack.pop().data);
+            ListNode nn = new ListNode(stack.pop().val);
             temp.next = nn;
             temp = nn;
         }
@@ -92,7 +92,7 @@ public class LC_206 {
     public static void traverse(ListNode head) {
         ListNode temp = head;
         while (temp != null) {
-            System.out.print(temp.data + " ");
+            System.out.print(temp.val + " ");
             temp = temp.next;
         }
         System.out.println();

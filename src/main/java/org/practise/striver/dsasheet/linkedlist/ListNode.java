@@ -1,18 +1,18 @@
 package org.practise.striver.dsasheet.linkedlist;
 
 public class ListNode {
-    public int data;
+    public int val;
     public ListNode next;
 
     public ListNode() {
     }
 
-    public ListNode(int data) {
-        this.data = data;
+    public ListNode(int val) {
+        this.val = val;
     }
 
-    public ListNode(int data, ListNode next) {
-        this.data = data;
+    public ListNode(int val, ListNode next) {
+        this.val = val;
         this.next = next;
     }
 }

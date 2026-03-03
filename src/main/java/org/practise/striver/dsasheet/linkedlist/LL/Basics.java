@@ -24,7 +24,7 @@ public class Basics {
     public static boolean isPresent(ListNode head, int value) {
         ListNode temp = head;
         while (temp != null) {
-            if (temp.data == value) {
+            if (temp.val == value) {
                 return true;
             }
             temp = temp.next;
@@ -56,7 +56,7 @@ public class Basics {
     public static void traverse(ListNode head) {
         ListNode temp = head;
         while(temp != null) {
-            System.out.print(temp.data + " ");
+            System.out.print(temp.val + " ");
             temp = temp.next;
         }
     }

@@ -1,4 +1,4 @@
-package org.practise.ew.algoTemplates;
+package org.practise.nnew.algoTemplates;
 
 import java.io.BufferedReader;
 import java.io.IOException;

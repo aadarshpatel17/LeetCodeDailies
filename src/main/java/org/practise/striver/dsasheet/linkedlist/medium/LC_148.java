@@ -51,7 +51,7 @@ public class LC_148 {
         // Traverse both lists
         while (node1 != null && node2 != null) {
             // choose smaller value
-            if (node1.data <= node2.data) {
+            if (node1.val <= node2.val) {
                 temp.next = node1;
                 node1 = node1.next;
             } else {
@@ -88,7 +88,7 @@ public class LC_148 {
         List<Integer> list = new ArrayList<>();
         ListNode temp = head;
         while (temp != null) {
-            list.add(temp.data);
+            list.add(temp.val);
             temp = temp.next;
         }
         Collections.sort(list);
@@ -96,7 +96,7 @@ public class LC_148 {
         temp = head;
         int i = 0;
         while (temp != null) {
-            temp.data = list.get(i++);
+            temp.val = list.get(i++);
             temp = temp.next;
         }
         return head;

@@ -24,11 +24,11 @@ public class LC_2 {
             int sum = 0;
 
             if (l1 != null) {
-                sum += l1.data;
+                sum += l1.val;
                 l1 = l1.next;
             }
             if (l2 != null) {
-                sum += l2.data;
+                sum += l2.val;
                 l2 = l2.next;
             }
 
@@ -53,7 +53,7 @@ public class LC_2 {
 
         int carry = 0;
         while (t1 != null && t2 != null) {
-            int sum = t1.data + t2.data + carry;
+            int sum = t1.val + t2.val + carry;
             ListNode nn = new ListNode(sum % 10);
             carry = sum / 10;
             temp.next = nn;
@@ -63,7 +63,7 @@ public class LC_2 {
         }
 
         while (t1 != null) {
-            int sum = t1.data + carry;
+            int sum = t1.val + carry;
             ListNode nn = new ListNode(sum % 10);
             carry = sum / 10;
             temp.next = nn;
@@ -71,7 +71,7 @@ public class LC_2 {
             temp = nn;
         }
         while (t2 != null) {
-            int sum = t2.data + carry;
+            int sum = t2.val + carry;
             ListNode nn = new ListNode(sum % 10);
             carry = sum / 10;
             temp.next = nn;

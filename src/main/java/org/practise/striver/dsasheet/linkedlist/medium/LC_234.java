@@ -20,7 +20,7 @@ public class LC_234 {
         ListNode mid = reverseLinkedList(slow.next);
         slow = head;
         while(mid != null) {
-            if(slow.data != mid.data)
+            if(slow.val != mid.val)
                 return false;
             mid = mid.next;
             slow = slow.next;

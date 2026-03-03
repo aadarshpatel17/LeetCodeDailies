@@ -15,7 +15,7 @@ public class PractiseI {
             return null;
         ListNode temp = head;
         while (temp != null) {
-            if(temp.data == value) {    
+            if(temp.val == value) {
                 ListNode nn = new ListNode(nodeValue);
                 nn.next = temp.next;
                 temp.next = nn;
@@ -31,12 +31,12 @@ public class PractiseI {
         if (head == null) {
             return null;
         }
-        if (head.data == value) {
+        if (head.val == value) {
             return new ListNode(nodeValue, head);
         }
         ListNode temp = head;
         while (temp.next != null) {
-            if (temp.next.data == value) {
+            if (temp.next.val == value) {
                 ListNode newNode = new ListNode(nodeValue);
                 newNode.next = temp.next;
                 temp.next = newNode;
@@ -108,7 +108,7 @@ public class PractiseI {
     public static boolean isPresent(ListNode head, int value) {
         ListNode temp = head;
         while (temp != null) {
-            if (temp.data == value) {
+            if (temp.val == value) {
                 return true;
             }
             temp = temp.next;
@@ -120,7 +120,7 @@ public class PractiseI {
     public static void print(ListNode head) {
         ListNode temp = head;
         while (temp != null) {
-            System.out.print(temp.data + " ");
+            System.out.print(temp.val + " ");
             temp = temp.next;
         }
         System.out.println();

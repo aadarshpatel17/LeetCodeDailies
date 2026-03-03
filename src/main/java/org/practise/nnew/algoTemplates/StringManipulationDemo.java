@@ -1,4 +1,4 @@
-package org.practise.ew.algoTemplates;
+package org.practise.nnew.algoTemplates;
 
 public class StringManipulationDemo {
     public static void main(String[] args) {
