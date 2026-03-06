@@ -16,10 +16,10 @@ public class RevisionDay1 {
         int[] n2 = {2, 5, 6};
         int n = 3;
 
-        int[] nums = {7,1,5,3,6,4};
+        int[] nums = {2,1,0,1,4};
 
 //        refer.rotateLeft(nums, 3);
-        System.out.println(refer.maxProfitII(nums));
+        System.out.println(refer.canJumpII(nums));
     }
 
     // 88. Merge Sorted Array
@@ -80,7 +80,8 @@ public class RevisionDay1 {
         int write = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != val) {
-                nums[write++] = nums[i];
+                write++;
+                nums[write] = nums[i];
             }
         }
         return write;
@@ -218,6 +219,7 @@ public class RevisionDay1 {
         int jump = 0;
         int currentEnd = 0;
         for(int i=0; i<n-1; i++) {
+            if(i > furthest) return -1;
             furthest = Math.max(furthest, i + nums[i]);
             if(i == currentEnd) {
                 jump++;
